@@ -1,18 +1,25 @@
 <!DOCTYPE html>
-<html ng-app="forum">
+<html ng-app="forum" ng-controller="mainController" ng-init="style=styles[0]">
 <head>
-	<title>DB Forum</title>
-	<link rel="stylesheet" href="style.css">
+	<title>Angular Forum</title>
+	<link rel="stylesheet" ng-href="{{style|lowercase}}.css">
+	<link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
  	<script src="app.js"></script>
 </head>
-<body ng-controller="mainController">
+<body>
 <h1>Angular Forum</h1>
 <form method=post ng-submit="addMessage()">
   	<div><textarea ng-model="content"></textarea></div>
 	<div><button type="submit">Post message</button></div>
 </form>
 <div ng-repeat="message in messages" class=post>
-<em class=date>{{message.time|date}}</em><br>{{message.content}}</div>
+<em class=date>{{message.time|date:"medium"}}</em><br>{{message.content}}</div>
+<div class="style-selector">
+Style: <br>
+<select ng-model="style">
+	<option ng-repeat="style in styles" value="{{style}}">{{style}}</option>
+</select>
+</div>
 </body>
 </html>

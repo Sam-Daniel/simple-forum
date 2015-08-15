@@ -1,0 +1,36 @@
+* {
+	font-family: sans-serif;
+	color:#90e595;
+	background-color:#2e4632; 
+   	text-shadow: 0 0 3px #FF0000;
+}
+
+*:focus{ outline: 0; } 
+
+h1, form { text-align: center}
+
+textarea { 
+	width: 400px; 
+	height: 100px; 
+	margin:20px;
+	padding:40px; 
+	font-size: 20px;
+	resize:none;
+}
+
+div.post { 
+	border: 1px solid #999;
+ 	padding: 10px 10px;
+	margin: 10px 20%; 
+}
+
+hr.postbound { width: 50%%; }
+
+em.date { color: #999 }
+
+.style-selector {
+	position: absolute;
+    top: 0;
+    left: 0;
+    padding:10px;
+}
