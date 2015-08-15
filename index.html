@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="forum">
+<head>
+	<title>DB Forum</title>
+	<link rel="stylesheet" href="style.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+ 	<script src="app.js"></script>
+</head>
+<body ng-controller="mainController">
+<h1>Angular Forum</h1>
+<form method=post ng-submit="addMessage()">
+  	<div><textarea ng-model="content"></textarea></div>
+	<div><button type="submit">Post message</button></div>
+</form>
+<div ng-repeat="message in messages" class=post>
+<em class=date>{{message.time|date}}</em><br>{{message.content}}</div>
+</body>
+</html>
